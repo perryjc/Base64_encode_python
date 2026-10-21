@@ -13,7 +13,8 @@ bytes_decoded = base64.b64decode(encoded_txt)
 imagebytes = open('GHClogoSmall_test.png', 'wb')
 # writes the bytes to the new file
 imagebytes.write(bytes_decoded)
-#closes file
+# closes file
 imagebytes.close()
+
 
 print("Finshed! The decoded image is named GHClogoSmall_test.png")
