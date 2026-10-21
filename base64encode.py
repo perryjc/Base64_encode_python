@@ -1,15 +1,18 @@
 import base64
 
-img_path = input("input image file path: ")
+img_path = input("input image file path: ").strip()
 
-def acceptimage(image):
-    img_path = img_path.strip("'/'")
-    #strip quotes if the user dragged-->dropped file
-    with open(img_path, "rb") as file:
-        data = file.read()
-        bytes = data[:10] 
+def convert(image):
+    with open(image, "rb") as image_file:
+        image_bytes = image_file.read() 
+        return image_bytes
+    #Opens the image and uses rb to turn the image into bytes
+    base64 = base65.b64encode(bytes).decode("utf-8")
+    print(base64)
+    return base64
+    #used the imported base64 module to conver the bytes to base64
 
+data = convert(img_path)
+print((data))
 
-
-
-acceptimage(img)
+# call the function and print it
