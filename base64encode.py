@@ -7,8 +7,8 @@ def acceptimage(image):
     #strip quotes if the user dragged-->dropped file
     with open(img_path, "rb") as file:
         data = file.read()
-        print(data[:10]
-        
+        bytes = data[:10] 
+
 
 
 
