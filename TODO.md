@@ -18,10 +18,10 @@ Decode.py:
 - [ ] Read filename and type 
 - [ ] Remove "_b64_" from filename
 - [ ] Change and return filetype
-- [ ] Convert textfile to string
-- [ ] Interprate text as binary
+- [x] Convert textfile to string
+- [x] Interprate text as binary
 - [ ] Identify orignal filetype (or just assume everything is going to be a png)
-- [ ] Compile binary into orignal file type 
+- [x] Compile binary into orignal file type 
 
 ## tutorials:
 
