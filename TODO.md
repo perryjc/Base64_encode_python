@@ -1,6 +1,7 @@
 # TO DO:
 
 ## Project breakdown/script requirments:
+!!! CANT USE BASE64 MODUAL !!!
 
 Encode.py:
 
