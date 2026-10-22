@@ -1,11 +1,9 @@
-import sys
-import base64
-
 file = input("What file would you like to decode?: ")
 
 # reads inputed file and places it into a veriable
 f = open(file)
 encoded_txt = f.read()
+
 
 # photo_bytes = base64.b64decode(encoded_txt)
 # this fuction does the same thing as base64.b64decode without having to import a module
@@ -32,10 +30,23 @@ def b64decode(bytes_to_decode):
                 decoded_bytes.append((bit_buffer >> bits_count) & 0xFF)
     return bytes(decoded_bytes)
 
+def b64_txt_file2og(b64_filename):
+    file = b64_filename
+    # is now: GHClogoSmall_b64_png.txt
+    file_clean = file.replace(".txt", "").replace("b64_", "")
+    # is now: GHClogoSmall_png (1 line solution to a 2 line problom 🤑)
+    file_og = file_clean.split("_")
+    # is now: ['GHClogoSmall', 'png']
+    filename = file_og[0]
+    filetype = "." + file_og[1]
+    return filename + filetype
+    # returns GHClogoSmall.png working!
+
 photo_bytes = b64decode(encoded_txt)
+new_file = b64_txt_file2og(file)
 
 # creates and opens new png file
-imagebytes = open('GHClogoSmall_test.png', 'wb')
+imagebytes = open(new_file, 'wb')
 # writes the bytes to the new file
 imagebytes.write(photo_bytes)
 # closes file
