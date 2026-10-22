@@ -4,7 +4,7 @@ import sys
 try:
     file = sys.argv[1]
 except IndexError:
-    file = input("What file would you like to decode?: ")
+    file = input("Enter name of the file you would like to decode: ")
 
 # reads inputed file and places it into a veriable
 f = open(file)
