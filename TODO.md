@@ -25,6 +25,7 @@ Decode.py:
 - [x] Interprate text as binary
 - [x] Identify orignal filetype (or just assume everything is going to be a png)
 - [x] Compile binary into orignal file type 
+- [ ] target file can be called from script launch insted of user input
 
 - [x] working prototype? 
 
