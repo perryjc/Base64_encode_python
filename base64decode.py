@@ -31,14 +31,10 @@ def b64decode(bytes_to_decode):
     return bytes(decoded_bytes)
 
 def b64_txt_file2og(b64_filename):
+    # see "file_id.py" for the line by line
     file = b64_filename
-    # is now: GHClogoSmall_b64_png.txt
     file_og = file.replace(".txt", "").replace("b64_", "").split("_")
-    # is now: ['GHClogoSmall', 'png'] (1 line solution to a THREE line problom 🤑)
-    filename = file_og[0]
-    filetype = "." + file_og[1]
-    return filename + filetype
-    # returns GHClogoSmall.png working!
+    return file_og[0] + "." + file_og[1]
 
 photo_bytes = b64decode(encoded_txt)
 new_file = b64_txt_file2og(file)
@@ -51,4 +47,4 @@ imagebytes.write(photo_bytes)
 imagebytes.close()
 
 
-print("Finshed! The decoded image is named GHClogoSmall_test.png")
+print("Finshed! The decoded image is named" + new_file)
