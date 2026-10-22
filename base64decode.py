@@ -1,4 +1,10 @@
-file = input("What file would you like to decode?: ")
+import sys
+
+# allows the file to be called when lauching the script or as an input
+try:
+    file = sys.argv[1]
+except IndexError:
+    file = input("What file would you like to decode?: ")
 
 # reads inputed file and places it into a veriable
 f = open(file)
@@ -47,4 +53,4 @@ imagebytes.write(photo_bytes)
 imagebytes.close()
 
 
-print("Finshed! The decoded image is named" + new_file)
+print("Finshed! The decoded file is named" + new_file)
