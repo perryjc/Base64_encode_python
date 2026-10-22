@@ -33,7 +33,7 @@ def b64decode(bytes_to_decode):
 def b64_txt_file2og(b64_filename):
     # see "file_id.py" for the line by line
     file = b64_filename
-    file_og = file.replace(".txt", "").replace("b64_", "").split("_")
+    file_og = file.replace(".txt", "").replace("_b64_", "$").split("$")
     return file_og[0] + "." + file_og[1]
 
 photo_bytes = b64decode(encoded_txt)
