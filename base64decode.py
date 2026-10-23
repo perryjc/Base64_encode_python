@@ -40,27 +40,36 @@ def b64_txt_file2og(b64_filename):
     # see "file_id.py" for the line by line
     file = b64_filename
     file_og = file.replace(".txt", "").replace("_b64_", "$").split("$")
-    return file_og[0] + "." + file_og[1]
+    if(len(file_og) == 2):
+        return file_og[0] + "." + file_og[1]
+    else:
+        print("")
+        print("Error! File not valid! make sure its a B64 string and saved as a .txt file.")
+        print("Exiting!")
+        sys.exit()
 
 # allows the file to be called when lauching the script or as an input
 try:
     file = sys.argv[1]
 except IndexError:
-    file = input("Enter name of the file you would like to decode (hit enter to exit): ")
+    file = input("Enter name of the file you would like to decode (or hit `enter` to exit): ")
     # if input is empty or nothing, script ends early, otherwise it continues
     if(file == "" or not file):
-        print("file not found. Exiting script.")
+        print("")
+        print("File not found. Exiting script.")
         sys.exit()
     else:
-        print("Decodeing file")
+        print("")
+        print("Decoding file...")
 
+# parses for original filename and ensures that input file is .txt
+new_file = b64_txt_file2og(file)
 
 # reads inputed file and places it into a veriable
 f = open(file)
 encoded_txt = f.read()
 
 photo_bytes = b64decode(encoded_txt)
-new_file = b64_txt_file2og(file)
 
 # creates and opens new png file
 imagebytes = open(new_file, 'wb')
@@ -70,4 +79,4 @@ imagebytes.write(photo_bytes)
 imagebytes.close()
 
 
-print("Finshed! The decoded file is named" + new_file)
+print("Finshed! The decoded file is named: " + new_file)

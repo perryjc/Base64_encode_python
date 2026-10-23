@@ -1,3 +1,4 @@
+import sys
 # testing with GHClogoSmall_b64_png.txt
 def b64_txt_file2og(b64_filename):
     file = b64_filename
@@ -8,7 +9,16 @@ def b64_txt_file2og(b64_filename):
     #   file_og = file_clean.split("_")
     # is now: ['GHClogoSmall', 'png']
 
-    return file_og[0] + "." + file_og[1]
+    # if the input file isnt .txt then file_og will only have one item
+    # if the input file is .txt then file_og will have two items
+
+    if(len(file_og) == 2):
+        return file_og[0] + "." + file_og[1]
+    else:
+        print("File not valid! make sure its a B64 string and saved as a .txt file.")
+        print("Exiting!")
+        sys.exit()
+
     #   filetype = "." + file_og[1]
     #   return filename + filetype
     #   returns GHClogoSmall.png working!
@@ -16,6 +26,6 @@ def b64_txt_file2og(b64_filename):
 # ISSUE: not working on files with "_" in their names ex: "test_file1_b64_txt.txt" becomes test.file1
 # FIXED: by adding and splitting at "$" insted of "_" (line6)
 
-print(b64_txt_file2og("test_file1_b64_txt.txt"))
+print(b64_txt_file2og("GHClogoSmall_b64_png.txt"))
 
 # reads inputed file and places it into a veriable

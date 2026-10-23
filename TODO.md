@@ -35,8 +35,8 @@ Giving myself extra stuff to do case im finshed early:
 
 - [x] Add ASCII art when script is loaded
 - [x] Exit script if user presses enter without an input
-- [ ] add error if input file isnt found
-- [ ] add error if input file isnt .txt
+- [ ] add error if input file isnt found (currently returns "file not valid")
+- [x] add error if input file isnt .txt
 - [ ] Exit script if user inputs anything besides text
 - [ ] Add color to ASCII art 
 - [ ] Allow files to be found from absolute file paths (as apposed to in the same folder as script)
