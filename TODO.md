@@ -5,9 +5,9 @@
 
 Encode.py:
 
-- [ ] Accept binary/image files
-- [ ] `import base64`
-- [ ] read image as bytes useing "rb" (read binary)
+- [x] Accept binary/image files
+- [x] `import base64`
+- [x] read image as bytes useing "rb" (read binary)
 - [ ] Encode bytes into base64
 - [ ] Make textfile from Encoded bytes
 - [ ] Create text file
