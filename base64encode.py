@@ -9,8 +9,8 @@ def convert(image):
         # reads the bytes and returns it
         print(image_bytes)
 
-data = convert(img_path)
-print((data))
+bytes_converted = convert(img_path)
+print((bytes_converted))
 
 def base64conversion(data):
     chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
@@ -41,7 +41,7 @@ def base64conversion(data):
     if padding > 0:
         encoded_str = encoded.str[:-padding] + ("=" * padding)
         return encoded
-print(f"Encoded {base64conversion(data)}")
+print(f"Encoded {base64conversion(bytes_converted)}")
 
 
 
