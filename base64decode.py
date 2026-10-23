@@ -11,23 +11,6 @@ print(r"""
     """)
 # link to ascii tool: https://patorjk.com/software/taag/#p=display&f=Slant&t=B64%20Decode%0A&x=none 
 
-# allows the file to be called when lauching the script or as an input
-try:
-    file = sys.argv[1]
-except IndexError:
-    file = input("Enter name of the file you would like to decode (hit enter to exit): ")
-    # if input is empty or nothing, script ends early, otherwise it continues
-    if(file == "" or not file):
-        sys.exit()
-    else:
-        print("Decodeing file")
-
-
-# reads inputed file and places it into a veriable
-f = open(file)
-encoded_txt = f.read()
-
-
 # photo_bytes = base64.b64decode(encoded_txt)
 # this fuction does the same thing as base64.b64decode without having to import a module
 def b64decode(bytes_to_decode):
@@ -58,6 +41,23 @@ def b64_txt_file2og(b64_filename):
     file = b64_filename
     file_og = file.replace(".txt", "").replace("_b64_", "$").split("$")
     return file_og[0] + "." + file_og[1]
+
+# allows the file to be called when lauching the script or as an input
+try:
+    file = sys.argv[1]
+except IndexError:
+    file = input("Enter name of the file you would like to decode (hit enter to exit): ")
+    # if input is empty or nothing, script ends early, otherwise it continues
+    if(file == "" or not file):
+        print("file not found. Exiting script.")
+        sys.exit()
+    else:
+        print("Decodeing file")
+
+
+# reads inputed file and places it into a veriable
+f = open(file)
+encoded_txt = f.read()
 
 photo_bytes = b64decode(encoded_txt)
 new_file = b64_txt_file2og(file)
