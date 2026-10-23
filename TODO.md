@@ -31,6 +31,13 @@ Decode.py:
 - [x] target file can be called from script launch insted of user input
 
 - [x] working prototype? 
+Giving myself extra stuff to do case im finshed early:
+
+- [ ] Add ASCCI art when script is loaded
+- [ ] Allow files to be found from absolute file paths (as apposed to in the same folder as script)
+- [ ] Create TUI???
+- [ ] Combine encoder and decoder into one script (after grace finshes)
+- [ ] Think about more things to add 
 
 ## tutorials:
 
