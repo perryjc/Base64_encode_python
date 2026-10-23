@@ -17,7 +17,7 @@ def base64conversion(data):
 
     bit_string = ""
     for byte in data: 
-        bit_string += f"{byte:08b}"
+        bit_string ="".join(f"{b:08b}" for b in data)
         #converting the byte into 8-digit binary in a formatted string literal (f"") --> b = conversion to binary, 8 = 8 chars/digits, 0 = pad with leading zeros
 
 
