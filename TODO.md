@@ -34,6 +34,10 @@ Decode.py:
 Giving myself extra stuff to do case im finshed early:
 
 - [x] Add ASCII art when script is loaded
+- [x] Exit script if user presses enter without an input
+- [ ] add error if input file isnt found
+- [ ] add error if input file isnt .txt
+- [ ] Exit script if user inputs anything besides text
 - [ ] Add color to ASCII art 
 - [ ] Allow files to be found from absolute file paths (as apposed to in the same folder as script)
 - [ ] Create TUI???
@@ -43,6 +47,7 @@ Giving myself extra stuff to do case im finshed early:
 ## tutorials/refrances:
 
 - https://www.geeksforgeeks.org/python/print-colors-python-terminal/
+- https://stackoverflow.com/questions/63840829/how-to-detect-esc-keypress-while-expecting-input-from-user
 - https://www.geeksforgeeks.org/python/python-raw-strings/
 - https://stackoverflow.com/questions/66134751/how-do-i-properly-print-ascii-art
 - https://www.w3schools.com/python/ref_string_replace.asp

@@ -15,7 +15,13 @@ print(r"""
 try:
     file = sys.argv[1]
 except IndexError:
-    file = input("Enter name of the file you would like to decode: ")
+    file = input("Enter name of the file you would like to decode (hit enter to exit): ")
+    # if input is empty or nothing, script ends early, otherwise it continues
+    if(file == "" or not file):
+        sys.exit()
+    else:
+        print("Decodeing file")
+
 
 # reads inputed file and places it into a veriable
 f = open(file)
