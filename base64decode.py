@@ -1,5 +1,16 @@
 import sys
 
+# ASCII art on load
+# DONT TOUCH THIS WAS DIFFICULT TO FIGURE OUT (thank you stackoverflow <3)
+print(r"""
+        ____  _____ __ __     ____                      __   
+       / __ )/ ___// // /    / __ \___  _________  ____/ /__ 
+      / __  / __ \/ // /_   / / / / _ \/ ___/ __ \/ __  / _ \
+     / /_/ / /_/ /__  __/  / /_/ /  __/ /__/ /_/ / /_/ /  __/
+    /_____/\____/  /_/    /_____/\___/\___/\____/\__,_/\___/                                                  
+    """)
+# link to ascii tool: https://patorjk.com/software/taag/#p=display&f=Slant&t=B64%20Decode%0A&x=none 
+
 # allows the file to be called when lauching the script or as an input
 try:
     file = sys.argv[1]

@@ -33,12 +33,17 @@ Decode.py:
 - [x] working prototype? 
 Giving myself extra stuff to do case im finshed early:
 
-- [ ] Add ASCCI art when script is loaded
+- [x] Add ASCII art when script is loaded
+- [ ] Add color to ASCII art 
 - [ ] Allow files to be found from absolute file paths (as apposed to in the same folder as script)
 - [ ] Create TUI???
 - [ ] Combine encoder and decoder into one script (after grace finshes)
 - [ ] Think about more things to add 
 
-## tutorials:
+## tutorials/refrances:
 
-https://www.w3schools.com/python/ref_module_base64.asp
+- https://www.geeksforgeeks.org/python/print-colors-python-terminal/
+- https://www.geeksforgeeks.org/python/python-raw-strings/
+- https://stackoverflow.com/questions/66134751/how-do-i-properly-print-ascii-art
+- https://www.w3schools.com/python/ref_string_replace.asp
+- https://www.w3schools.com/python/ref_module_base64.asp
