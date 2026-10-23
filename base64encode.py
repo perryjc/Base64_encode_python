@@ -41,7 +41,7 @@ def base64conversion(data):
     if padding > 0:
         encoded_str = encoded.str[:-padding] + ("=" * padding)
         return encoded
-print(f"Encoded {base64conversion(img_path)}")
+print(f"Encoded {base64conversion(data)}")
 
 
 
