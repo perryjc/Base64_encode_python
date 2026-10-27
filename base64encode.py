@@ -15,13 +15,11 @@ print((bytes_converted))
 def base64conversion(data):
     chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 
-    bit_string = ""
-    for byte in data: 
-        bit_string ="".join(f"{b:08b}" for b in data)
+    bit_string ="".join(f"{b:08b}" for b in data)
         #converting the byte into 8-digit binary in a formatted string literal (f"") --> b = conversion to binary, 8 = 8 chars/digits, 0 = pad with leading zeros
 
 
-#some bits dont divide into 6-bit chunks, which is why padding is needed here
+#some bits dont divide into 6-bit chunks/aren't divisible by three, which is why padding is needed here
     padding = 0
     #when divided, if there is a remainder, the if statement is used
     if len(bit_string) % 6 != 0:
@@ -33,7 +31,7 @@ def base64conversion(data):
     encoded = ""
 
     # grouped into 6-bit chunks
-    for i in range(0, leng(bit_string), 6):
+    for i in range(0, len(bit_string), 6):
         six_bits = bit_string[i:i+6]
         index = int(six_bits, 2)
         encoded_str += b64_chars[index]
