@@ -9,4 +9,6 @@ def encode(s):
     print(base64_list)
 
 encode("W1sT/P")
-
+encode("ABCDEFG")
+encode("abcdefg")
+encode("12345")
