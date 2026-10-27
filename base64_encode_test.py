@@ -1,13 +1,12 @@
 
 def encode(s):
     base64_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-    for s in input_chars:
-        if s in base64_chars:
-            index = base64_chars.index(s)
-            print(f"{index}")
-        elif char == "=":
-            print(f"Padding")
-        else:
-            print("Not Valid")
+    base64_list = []
+    for i in range(len(s)):
+        char = s[i]
+        index = base64_chars.index(char)
+        base64_list.append(index)
+    print(base64_list)
 
+encode("W1sT/P")
 

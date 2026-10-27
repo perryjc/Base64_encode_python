@@ -12,7 +12,7 @@ def convert(image):
 bytes_converted = convert(img_path)
 print((bytes_converted))
 
-def base64conversion(data):
+def base64conversion(data:bytes) -> str:
     chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 
     bit_string ="".join(f"{b:08b}" for b in data)
