@@ -64,7 +64,7 @@ def bits_to_base64(bitstr):
 
     return result
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     import doctest
     doctest.testmod()
 
