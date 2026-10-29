@@ -57,12 +57,13 @@ def bits_to_base64(bitstr):
         byte = binary_stream[i:i+8]
         if len(byte) == 8:
             bytes_list.append(byte)
-    result2 = ""
+    result = ""
     for byte in bytes_list:
         character = chr(int(byte, 2))
-        decoded += character
-    return result2
-
+        result += character
+    result2 = bits_to_base64(s2)
+    return result
+    
 
 if __name__ == "__main__":
     import doctest
