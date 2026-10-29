@@ -45,20 +45,22 @@ def bits_to_base64(bitstr):
       'tYs1VvHa5Q=='
     """
     b64_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-    strip_string = b64_chars.rstrip('=')
+    strip_string = strip_string.replace("=", "")
     binary = ""
     for char in strip_string:
         index = b64_chars.index(char)
-        binary_6bit = bin(index)[2:].zfill(6)
+        binary_6bit = format(index, '06b')
         binary += binary_6bit
-
-    decoded = ""
+    
+    bytes_list = []
     for i in range(0, len(binary), 8):
-        byte_chunk = binary_stream[i:i+8]
-        if len(byte_chunk)<8:
-            break
-        decimal = int(byte_chunk, 2)
-        decoded += chr(decimal_ascii)
+        byte = binary_stream[i:i+8]
+        if len(byte) == 8:
+            bytes_list.append(byte)
+    decoded = ""
+    for byte in bytes_list:
+        character = chr(int(byte, 2))
+        decoded += character
     return decoded
 
 
