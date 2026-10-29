@@ -29,7 +29,7 @@ def bits_to_base64(bitstr):
     """
     >>> bits_to_base64('010001110100100001100111')
       'R0hn'
-      >>> bits_to_base64('010101000110010101110011')
+>>> bits_to_base64('010101000110010101110011')
       'VGVz'
       >>> bits_to_base64('01001101')
       'TQ=='
@@ -50,5 +50,29 @@ def bits_to_base64(bitstr):
         bitstr += "0"
         padding += 1
     byte_padding = (6-(len(bitstr) // 6 * 6 - (len(bitstr) - padding_count)))//2
-    extra_bits = (6-len(bitstr) % 6)) % 5
-    padded = bitstr
+    extra_bits = (6-(len(bitstr) % 6)) % 6
+    padded = bitstr + ('0' * extra_bits)
+
+    encoded = []
+    for i in range(0, len(padded), 6):
+        chunk = padded[i:i+6]
+        value = int(chunk, 2)
+        encoded.append(b64_chars[value])
+
+    pad_len = (4 - (len(encoded_chars) % 4)) % 4
+    result = "".join(encoded_chars) + ("=" * pad_len)
+
+    return result
+
+if __name__ = "__main__":
+    import doctest
+    doctest.testmod()
+
+
+
+
+
+
+
+
+
