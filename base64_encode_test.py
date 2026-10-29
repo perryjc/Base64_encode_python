@@ -45,24 +45,22 @@ def bits_to_base64(bitstr):
       'tYs1VvHa5Q=='
     """
     b64_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-    padding = 0
-    while len(bitstr) % 6 != 0:
-        bitstr += "0"
-        padding += 1
-    byte_padding = (6-(len(bitstr) // 6 * 6 - (len(bitstr) - padding_count)))//2
-    extra_bits = (6-(len(bitstr) % 6)) % 6
-    padded = bitstr + ('0' * extra_bits)
+    strip_string = b64_chars.rstrip('=')
+    binary = ""
+    for char in strip_string:
+        index = b64_chars.index(char)
+        binary_6bit = bin(index)[2:].zfill(6)
+        binary += binary_6bit
 
-    encoded = []
-    for i in range(0, len(padded), 6):
-        chunk = padded[i:i+6]
-        value = int(chunk, 2)
-        encoded.append(b64_chars[value])
+    decoded = ""
+    for i in range(0, len(binary), 8):
+        byte_chunk = binary_stream[i:i+8]
+        if len(byte_chunk)<8:
+            break
+        decimal = int(byte_chunk, 2)
+        decoded += chr(decimal_ascii)
+    return decoded
 
-    pad_len = (4 - (len(encoded_chars) % 4)) % 4
-    result = "".join(encoded_chars) + ("=" * pad_len)
-
-    return result
 
 if __name__ == "__main__":
     import doctest
