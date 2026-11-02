@@ -14,17 +14,23 @@ def base64_to_bits(b64str):
       >>> base64_to_bits('tYs1VvHa5Q==') == s2
       True
     """
-    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-    padding = (6 - len(bit_string) %6) % 6
-    bit_string += "0" * padding_needed
-    b64_result = ""
     result = ""
-    for i in range(0, len(bit_string), 6):
-        chunk = bit_string[i:i+6]
-        val = int(chunk,2)
-        result += alphabet[val]
-    result += "=" * (padding_needed//2)
+    bit_string = ""
+    padding = len(b64str % 6 )
+    if rem:
+        b64str += "0" * (6 - padding)
+    b64_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+    for i in range(0, len(b64str), 6):
+        bits = b64str[i:i+6]
+        value = int(bits, 2)
+        result += b64_chars[value]
+
+    pad_rem = len(result) % 4
+    if pad_rem:
+        result += "=" * (4-pad_rem)
     return result
+
+
 
 if __name__ == '__main__':
     import doctest
