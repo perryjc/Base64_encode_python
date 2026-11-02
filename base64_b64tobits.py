@@ -1,4 +1,4 @@
-def base64_to_bits(b64str):
+def base64_to_bits(b64str:str)--> str:
     """
     >>> base64_to_bits('Rohn')
     '010001110100100001100111'
