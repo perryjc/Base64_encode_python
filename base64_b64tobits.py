@@ -18,6 +18,7 @@ def base64_to_bits(b64str):
     padding = (6 - len(bit_string) %6) % 6
     bit_string += "0" * padding_needed
     b64_result = ""
+    result = ""
     for i in range(0, len(bit_string), 6):
         chunk = bit_string[i:i+6]
         val = int(chunk,2)
