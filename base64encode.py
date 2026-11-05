@@ -6,15 +6,22 @@ def convert(image):
     with open(image, "rb") as image_file:
         image_bytes = image_file.read() 
         # reads the bytes and returns it
-        print(image_bytes)
+        return image_bytes
 
 bytes_converted = convert(img_path)
-print((bytes_converted))
 
 
-new_file ="testfile1.txt"
+def base64_conversion(data):
+    chars = "ABCDEFGHIJKLMNOPQRSTUVQXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+    for i in range(len(data)):
+        converted_char = str(data[i])
+        index = chars.index(converted_char)
+        return index
+b64converted = base64_conversion(bytes_converted)
+
+new_file = testfile1.txt
 imagebytes = open(new_file, 'wb')
-imagebytes.write(bytes_converted)
+imagebytes.write(b64converted)
 imagebytes.close()
 print(new_file)
 
