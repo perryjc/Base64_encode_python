@@ -15,9 +15,6 @@ Encode.py:
 - [ ] Take "file.type" and return "{file}_b64_{type}.txt"
 
 - [ ] working prototype? 
-
-## JAMES HAS ISS: PLEASE TEXT ME (202-908-9643) OR INSTAGRAM (perryjeff366) 
-## if you need any help cause im done with my script.
  
 Decode.py:
 
