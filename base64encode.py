@@ -13,34 +13,37 @@ def convert(image):
                 bitstr += '1'
             else:
                 bitstr += '0'
-        return bitstr
+    return bitstr
 
 
 bytes_converted = convert(img_path)
-bytes_object = bytes_converted.encode("utf-8")
-print(bytes_object)
 
 def base64_conversion(data):
     chars = "ABCDEFGHIJKLMNOPQRSTUVQXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
     b64_string = ""
-    for i in range(len(data)):
-        converted_char = str(data[i])
-        index = chars.index(converted_char)
-        b64_string += str(index)
+    total_bytes = len(data)//8
+    rem_bytes = total_bytes % 3
+
+    while len(data) % 6 != 0:
+        data += "0"
+    for i in range(0, len(data), 6):
+        six_bits = data[i:i+6]
+        index = int(six_bits,2)
+        b64_string += chars[index]
+    if rem_bytes == 1:
+        b64_string += "=="
+    elif rem_bytes == 2:
+        b64_string += "="
     return b64_string
+
+
+
+
 b64converted = base64_conversion(bytes_converted)
-print(b64converted)
 
-with open("testfile1.txt", "w", encoding = "utf-8") as file:
+output_file = "testfile1.txt"
+with open(output_file, "w", encoding = "utf-8") as file:
     file.write(b64converted)
-new_file = "testfile1.txt"
-read = open("testfile1.txt", 'w')
-read.write(b64converted)
-read.close()
-print(new_file)
-
-
-
 
 
 
